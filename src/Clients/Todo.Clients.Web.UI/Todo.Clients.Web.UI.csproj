@@ -112,11 +112,12 @@
       <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="WebActivator">
-      <HintPath>..\..\packages\WebActivator.1.4.4\lib\net40\WebActivator.dll</HintPath>
+      <HintPath>..\..\..\packages\WebActivator.1.4.4\lib\net40\WebActivator.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\SimpleInjectorInitializer.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -145,21 +146,27 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Home\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\..\Domain\Todo.Domain.Entities\Todo.Domain.Entities.csproj">
       <Project>{5b56a8a1-cb85-4588-8929-878a550a19be}</Project>
       <Name>Todo.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Todo.Domain.IoC\Todo.Domain.IoC.csproj">
+      <Project>{ca63129d-7701-4e9c-8243-8ab66fc1571e}</Project>
+      <Name>Todo.Domain.IoC</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Domain\Todo.Domain.Services\Todo.Domain.Services.csproj">
       <Project>{ef20a233-cedc-4017-8c03-70bdac8b7a66}</Project>
       <Name>Todo.Domain.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Domain\Todo.Domain\Todo.Domain.csproj">
-      <Project>{7dbb3ff9-48f0-43c5-8118-5f7aa732fa5b}</Project>
-      <Name>Todo.Domain</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

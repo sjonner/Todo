@@ -7,17 +7,19 @@ using Todo.Domain.Entities;
 using Todo.Domain.Services;
 
 namespace Todo.Clients.Web.UI.Controllers {
-    public class HomeController : Controller {
+    public class HomeController : BaseController {
         protected ITaskService taskService;
 
         //Use IoC constructor injector
-        public HomeController(ITaskService taskService) {
+        public HomeController(ITaskService taskService)
+        {
             this.taskService = taskService;
         }
 
-        public ActionResult Index() {
-            //taskService.Persist(new Task() { Description = "Taak 1" });
-            return View();
+        public ActionResult Index()
+        {
+            var tasks = taskService.GetAll();
+            return View(tasks);
         }
 
     }
