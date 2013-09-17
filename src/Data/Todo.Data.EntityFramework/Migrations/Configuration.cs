@@ -21,15 +21,17 @@ namespace Todo.Data.EntityFramework.Migrations
         /// <param name="context"></param>
         protected override void Seed(Todo.Data.EntityFramework.TaskDao context)
         {
-            //1. Add some test data and check if exists based on description
+
+            //1. Commandline: install-package entityframework
+            //2. Add some test data and check if exists based on description
             context.Tasks.AddOrUpdate(t => t.Description,
                 new Task() { Description = "Add IoC", IsDone = true },
                 new Task() { Description = "Add EF", IsDone = true },
                 new Task() { Description = "Add unit", IsDone = false });
 
-            //2. Select Entityframework as default project
+            //3. Select Entityframework as default project
 
-            //3. Use update-database command in the package manager
+            //4. Use update-database command in the package manager
         }
     }
 }
