@@ -16,10 +16,11 @@ namespace Todo.Clients.Web.UI.App_Start
         /// <summary>Initialize the container and register it as MVC3 Dependency Resolver.</summary>
         public static void Initialize()
         {
-            // Did you know the container can diagnose your configuration? Go to: http://bit.ly/YE8OJj.
+            //// Did you know the container can diagnose your configuration? Go to: http://bit.ly/YE8OJj.
             var container = new Container();
-            
-            InitializeContainer(container);
+
+            //Make call to Domain.IoC initializer
+            Todo.Domain.IoC.SimpleInjectorInitializer.Initialize(container);
 
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
             
@@ -29,10 +30,6 @@ namespace Todo.Clients.Web.UI.App_Start
             
             DependencyResolver.SetResolver(new SimpleInjectorDependencyResolver(container));
         }
-     
-        private static void InitializeContainer(Container container)
-        {
-            container.Register<ITaskService, TaskService>();
-        }
+
     }
 }

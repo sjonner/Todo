@@ -9,5 +9,6 @@ namespace Todo.Data.Services
     public interface ITaskDao
     {
         Task Persist(Task task);
+        IQueryable<Task> GetAll();
     }
 }

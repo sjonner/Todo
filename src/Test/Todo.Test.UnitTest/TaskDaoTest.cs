@@ -8,8 +8,7 @@ namespace Todo.Test.UnitTest
     public class TaskDaoTest{
         [TestMethod]
         public void Do() {
-            Assert.AreEqual(1,1);
-            
+            Assert.AreEqual(1,1); 
         }
     }
 }

@@ -9,5 +9,6 @@ namespace Todo.Domain.Services
     public interface ITaskService
     {
         Task Persist(Task task);
+        IQueryable<Task> GetAll();
     }
 }

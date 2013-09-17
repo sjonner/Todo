@@ -43,6 +43,10 @@
     <Compile Include="TaskService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Data\Todo.Data.Services\Todo.Data.Services.csproj">
+      <Project>{ce5ac7d8-9672-4c37-b146-c9c5fe4dc08e}</Project>
+      <Name>Todo.Data.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Todo.Domain.Entities\Todo.Domain.Entities.csproj">
       <Project>{5b56a8a1-cb85-4588-8929-878a550a19be}</Project>
       <Name>Todo.Domain.Entities</Name>
