@@ -8,8 +8,8 @@ namespace Todo.Domain.Entities
 {
     public class Task
     {
-        public int Id;
-        public string Description;
-
+        public virtual int Id { get; set; }
+        public virtual string Description { get; set; }
+        public virtual bool IsDone{ get; set; }
     }
 }
